@@ -1,43 +1,450 @@
-Il faut que tu programme un jeu pour moi sur mon IDE Netbeans. Le jeu s’appeleras The minautor. Quand on lance le jeu nous arrivons sur le menu principale, un fond noir qui clignote en rouge de maniéré irrégulière de façon horreur, le titre « The Minautor est en haut en rouge est écris dans une police horreur et en itallique. 5 mode de jeu sont proposé, ils seront écrits à gauche de l’écran en rouge dans une police horeur et quand le focus est sur le mode, une ligne souligne le mode attention je ne veux pas les lignes du bouton seulement l’écriture. Les 5 modes « Avatar » « Classique » « Multijoueur » « Survival » « Bonus ». 
-Quand on clique sur le mode « Avatar » on arrive dans un autre menu écris en grand au-dessus Avatar en rouge dans une police horeur et le fond sera noir et clignotera en rouge de la même manière que le menu principale. Dans ce menu sera presenté 8 avatar qui pourront être jouer dans le labyrinthe, je te laisse faire 8 avatar toi-même je ne sais pas ce qui est possible de faire, l utulisateur peut passer d’un avatar a l aiutre via les fleces celui-ci sera alors sousligné ; un bouton valider sera disponible en bas pour l enregister et donc que la prochaine partie lancé ce jouera avec cette avatar.
+TU ES UNE IA GENERATRICE DE CODE.
+Tu dois produire un projet JavaFX COMPLET, structuré, compilable immédiatement dans NetBeans avec JDK 25 sous Windows.
+Ce cahier des charges est UNIQUE et fait foi. Il remplace toute version précédente.
+En cas de conflit, les règles “CAHIER DES CHARGES – MENUS” priment.
 
-Quand on clique sur le menu « classique  »  nous arrivons dans un autre menu avec comme titre Classique écris en rouge police horreur, cet écran sera aussi noir et clignotera en rouge de la même manière que le menu principale. Un curseur de difficulté qui va de 1 à 5 et une phrase pour chacun de ces niveau de difficulté écris :
-- Niveau 1 : « Tu es faible et tu as peur « 
-- Niveau 2 : « tu commences à te sentir chaud ? « 
-- Niveau 3 : « On commence seulement à s’amuser »
-- Niveau 4 : « tu vas transpirer… le minautor aussi »
-- niveau 5 : « tu viens de signer ton arrêt de mort »
-Ensuite sera proposer de soit jouer le joueur soit de jouer le minautor avec 2 bouton dont seulement 1 peut être sélectionner « Joueur » « Minautor » 2 autres bouton, un à gauche écris « Retour » avec une flèche vers la gauche et un autre bouton à droite écris » « Entrez dans le labyrinthe » avec une flèche vers la droite. 
-Le gameplay est simple, un labyrinthe qui fait la taille de l ecran de l utulisateur sans cacher sa barre des taches en bas, le labyrinthe est un labyrinthe de type multi connexions avec plein de reseau et de ramification differente. Le joueur qui spown dans un des 4 coin du labyrinhe de façon aleatoire se retrouve avec son avatar choisis, il doit se rendre au millieu du labyrinthe qui sera symboliser par une case verte avec une croix noir dedans, une fois cette case atteint une porte pour sortir du labyrinthe apparaitra dans un des 4 coin du labyrinthe de façon aleatoire. Le joueur se trouve dans un halo de lumiere parfaitement circulaire de quelque cas le reste du labyrinthe sera complètement noir. Ce halo de lumière clignotera à l’approche du minautor, avant que celui-ci soit visible dans le halo de lumière. Quand le halo clignote un ephrase s’affiche en bas de l ecran en rouge et qui clignote, il est proche. Le minautor est symbolisé par un tete de taureau rouge, il rode dans le labyrinthe avec une préférence vers les case du millieu pour protéger sa case du milieu. Lorsqu’il voit le joueur il le pourchasse pendant quelques seconde. Quand le joueur atteint la case du centre une phrase s affiche et disparais assez rapidement en fondu « La porte est ouverte » lorsque cette étape est active le minautor connais tout le temps la position du joueur et le pourchasse. Une barre d’indication est placée au-dessus du labyrinthe avec mode de jeu, par exemple classique ou survival ou multijoueur ou bonus, le nombre de vie, le joueur en possède 3 au début de la partie, et le temps sous forme minutes seconde du genre 9 : 47 le joueur dispose de 10 mn.( la phrase il est proche quand le halo clignote s’affichera aussi dans cette barre. Si le joueur a perdu ses 3 vie ou que le timer est a 0 une grosse popup de la taille du labyrinthe apparait écris « Game over » en rouge police horreur avec un bouton retour au menu. Quand le joueur gagne la partie il est marque » Tu as échappé au Minautor… pour l’instant ! le déplacement du joueur se fait via les fleche. Le labyrinthe possède des porte qui s’ouvre et qui se ferme tout au long de la partie mais attention il doit y av avoir toujours un chemin pour accéder au centre de la map . les portes n’apparaissent pas n’importe où a la génération de la map mais entre 2 mur pour fermer le passage, les portes ne peuvent pes être coller à la génération. 3 coffres sont disposés aléatoirement dans la map chacun possède du temps à rajouter au timer, 1 de 30 seconde 1 de 45 seconde et 1 de 60 seconde. A la génération de la map 2 portail qui sont symbolise par des rond bleu foncé permette de se téléporter dans un autre endroit du labyrinthe aléatoirement, le portail disparait après l’utilisation, le minautor peut l’emprunter aussi. Le labyrinth est composé de chemin granulaire dris clair et des murs texture de mur gris foncé pour un bon contraste pour l œil, il n ya pas de ligne qui separe les case. Lorsque le joueur choisis de jouer le minautor c est pareil, le minautor a un halo de lumiere, apparait dans un coin et doit empêcher l ia de sortir du labyrinthe. Le minautor est controlé par les flèches et lorsque l ia a ouvert sa porte on découvre sa position en continue mais pas son halo juste sa position
+========================================
+CONTRAINTES BUILD / EXECUTION
+========================================
+- JavaFX n’est PAS inclus dans JDK 25.
+- Projet OBLIGATOIREMENT Maven avec OpenJFX configuré.
+- Utiliser OpenJFX version stable LTS 21.x.
+- DOIT compiler sans erreur.
+- Exécution uniquement via : mvn javafx:run
+- Interdiction setFullScreen(true).
+- Utiliser stage.setMaximized(true).
+- Taille minimale fenêtre : 1180x720 (stage.setMinWidth/MinHeight), puis maximisée.
+- Sans Java Modules (PAS de module-info.java).
+- Plugin javafx-maven-plugin configuré avec :
+  mainClass = com.steven.theminautaur.MainApp
+- Plateforme : Windows uniquement.
 
-Quand on clique sur le menu « Multijoeur  »  nous arrivons dans un autre menu avec comme titre « Multijoueur » écris en rouge police horreur, cet écran sera aussi noir et clignotera en rouge de la même manière que le menu principale. Un curseur de difficulté qui va de 1 à 5 et une phrase pour chacun de ces niveau de difficulté écris :
-- Niveau 1 : « Tu es faible et tu as peur « 
-- Niveau 2 : « tu commences à te sentir chaud ? « 
-- Niveau 3 : « On commence seulement à s’amuser »
-- Niveau 4 : « tu vas transpirer… le minautor aussi »
-- niveau 5 : « tu viens de signer ton arrêt de mort »
-Ensuite sera proposer de soit jouer le joueur soit de jouer le minautor avec 2 bouton dont seulement 1 peut être sélectionner « Joueur » « Minautor » 2 autres bouton, un à gauche écris « Retour » avec une flèche vers la gauche et un autre bouton à droite écris » « Entrez dans le labyrinthe » avec une flèche vers la droite.
+========================================
+IDENTITE PROJET
+========================================
+GroupId      : com.steven
+ArtifactId   : the-minautaur
+Package root : com.steven.theminautaur
+Sous-packages autorisés mais cohérents.
 
-Le gameplay est assez simple, le joueur qui sponera dans son coin et 3 autres joeur Ia dans les 3 autres coin de la map, plus le minautor. Les 3 autres joueur ia auront un item des 8 proposé dans le jeu mais interdit de prendre le même que le joueur, ici le joueur humain ne voit que son halo de lumière et pas celui des autres joueur Ia ; le but est d’être le premier a sortir de la même manière que dans le classique en arrivant au centre et en trouvant la sortie, mais la différence étant que la porte débloquer par le joueur se trouve d’office dans son coin. Il est tout à fait possible que plusieurs portes soient ouvertes en même temps mais chaque joueur ne peut sortir que par sa porte donc dans se mode de jeu on supprime le timer et les coffre de temps. A chaque joueur ayant atteint le milieu une écriture s affiche joueur 1 a ouvert sa porte. Le joueur bouge grâce a ses flèche. Lorsque le joueur choisi d’être le minautor il affronte donc 4 joueur humain et doit les en empêcher de sortir mais il ne voit que son halo de lumière dès qu’ un jouer a ouvert sa porte il voit la position du joueur mais seulement du joueur pas de son halo. Le minautor est aussi commandé par les flèches. 
-Quand on clique sur le menu « Survival  »  nous arrivons dans un autre menu avec comme titre « Survival » écris en rouge police horreur, cet écran sera aussi noir et clignotera en rouge de la même manière que le menu principale. Un curseur de difficulté qui va de 1 à 5 et une phrase pour chacun de ces niveau de difficulté écris :
-- Niveau 1 : « Tu es faible et tu as peur « 
-- Niveau 2 : « tu commences à te sentir chaud ? « 
-- Niveau 3 : « On commence seulement à s’amuser »
-- Niveau 4 : « tu vas transpirer… le minautor aussi »
-- niveau 5 : « tu viens de signer ton arrêt de mort »
-Ensuite sera proposer de soit jouer le joueur soit de jouer le minautor avec 2 bouton dont seulement 1 peut être sélectionner « Joueur » « Minautor » 2 autres bouton, un à gauche écris « Retour » avec une flèche vers la gauche et un autre bouton à droite écris » « Entrez dans le labyrinthe » avec une flèche vers la droite.
+========================================
+LIVRAISON OBLIGATOIRE
+========================================
+- Code en MULTIPLES BLOCS
+- Chaque bloc = UN FICHIER COMPLET
+- Chaque bloc commence par le chemin exact du fichier
+- Fournir pom.xml
+- Fournir README.md minimal
+- Ne rien omettre (projet complet directement compilable).
 
-Le gameplay est simple : le joueur humain plus 7 joueur Ia ainsi que le minautor, les 7 joueur possède les avatar proposé dans le jeu mais interdit de prendre l avatar du joueur humain. Ici les spown sont aleatoire pour tout les joueur, l objectif est simplement d être le dernier en vie parmi les joueurs, chacun possédant 1 vie lorsque on la perd on est éliminé du jeu lorsqu il reste 1 survivant, une porte s’ouvre dans un des 4 coin de la map de manière aleatoire. Pour gagner il faut sortir du labyrinte. Lorsqu il reste 1 survivat le message suivant s’affiche «  La porte s’est ouverte » le temps est supprimer dans ce mode de jeu ainsi que les coffre de temps. Le joeur est controlé par les fleche et ne voit que son halo de lumiere. Lorsque le joueur choisis de jouer le minautor son objecti est d attraper les 8 joueur ia, il est deiger par les flèches et ne voit que son halo de lmiere, lorsque il reste 1 survivant et que la porte est ouverte, il perçoit la position de joueur tout le temps, pas son halo mais juste sa position.
-Quand on clique sur le menu « Bonus  »  nous arrivons dans un autre menu avec comme titre « Bonus » écris en rouge police horreur, cet écran sera aussi noir et clignotera en rouge de la même manière que le menu principale. Dans ce mode si pas de curseur de difficulté et pas la possibilité de jouer le minotor, c’est exactement le même jeu que le classique sauf qu’a chaque fois que le joueur arrive a sortir du labyrinthe il passe au niveau supérieur à chaque niveau supplémentaire un minotaur apparait en plus le joueur récupère ses 1 vie tout les 2 niveau donc par exemple au niveau 5 le jouer est confronter a 5 minautor. Lorsque le joueur perd il retourne au niveau 1, évidement le joeeur ne voit que sont halo de lumière. Dans la varre au-dessus avec le timer les vie ect est afficher aussi le niveau a lequel le joueur se trouve. 
-A chaque partie lancé le bouton r du clavier permet de revenir au menu, dans tout les cas nous voyons que notre halo de lumière et que ce soit un un joueur ou le minautor qui est contrôlé celui-ci est contrôlé avec les flèches. Pour tout les modes avec curseur de difficulté, la difficulté diminue le rayon du halo lumineux, la vitesse des portes qui ouvre et qui se ferme mais aussi l’intelligence et la vitesse des ia avec lesquelles il est confronter que ce soit minautor ou joueur.  
+========================================
+RESOURCES
+========================================
+Chemin resources :
+src/main/resources/assets/
+ ├─ fonts/horror.ttf
+ ├─ ui/menu_fade.png
+ ├─ avatars/a1.png … a8.png
+ (Optionnel recommandé pour respecter le visuel menus : ui/bg_main.png, ui/bg_classique.png, ui/bg_multi.png, ui/bg_survival.png, ui/bg_bonus.png)
 
-Ce code doit faire a mon avis plus de 3000 lignes de code donc pour faire un programme sérieux dit moi le nom de fichier et de classe puis realise moi ce code en plusieurs bloc qui peuvent être coller a la suite de l autre dans mon IDE
+Règles assets :
+- Conserver proportions images (jamais d’étirement).
+- Si un asset manque -> fallback graphique simple (AUCUNE exception, aucun crash, aucune stacktrace).
+- horror.ttf utilisé UNIQUEMENT pour les TITRES de menus (jamais ailleurs).
+- Avatars affichés ronds (clip cercle ou rendu circulaire).
+- Si avatar PNG absent -> fallback :
+  - cercle coloré (couleur unique déterministe par index)
+  - + cercle noir central (silhouette simple = disque noir).
 
+========================================
+PERSISTENCE (Preferences)
+========================================
+Utiliser java.util.prefs.Preferences.
+Stocker UNIQUEMENT :
+- avatar sélectionné (entier 1..8)
+Rien d’autre.
 
+========================================
+ARCHITECTURE OBLIGATOIRE (CLASSES)
+========================================
+MainApp
+SceneRouter
+AppState
 
+MainMenuView
+AvatarMenuView
+ModeConfigView
+BonusConfigView
+HorrorBackground
 
+GameView
+HudBar
+GameLoop
+InputManager
 
-Le labyrinthe en terle de propoton doit être comme sur l imge ci-joint, la structure du labyrinthe presente trop de cul de sac, je veux réduire par 5 le nombre de cul de sac. Dans le mode classique quand on contrôle le minautor en fait on le contrôle pas du tout il fait s vie tout seul. Il faut enlever le halo qui tremble pour le minautor dans tout les mode ainsi que le texte « il est proche » mais mettre le nombre d’avatar encore en vie pour le minautor aussi. Les joueur quand on est le minotaur est trop fort il faut aussi qui o se perdent un peu dans le labyrinthe on dirait qu ils connaisse la position de la case du millieur 
+Maze
+MazeGenerator
+DoorManager
+PortalManager
+ChestManager
 
+Entity
+Runner
+Minotaur
+Avatar
 
+RunnerAI
+MinotaurAI
+Pathing
+LineOfSight
+TeamComms
 
+ScreenOverlay
+FadeText
+
+NOTE : respecter ces noms de classes EXACTS et un package cohérent com.steven.theminautaur (sous-packages permis).
+
+========================================
+STYLE HORREUR (GLOBAL MENUS)
+========================================
+- Fond noir + ambiance horreur.
+- Pas de Button JavaFX visible, pas de Dialog standard dans les menus.
+- Navigation souris + clavier obligatoire.
+- Hover = soulignement TEXTE uniquement (pas de rectangle “bouton”).
+- Le titre des menus utilise horror.ttf UNIQUEMENT.
+- AUCUNE interprétation graphique libre : respecter STRICTEMENT les visuels menus fournis.
+- Aucun crash si assets manquants.
+
+========================================
+CAHIER DES CHARGES – MENUS (PRIORITAIRE)
+THE MINAUTOR
+========================================
+
+IMPORTANT :
+Tous les menus doivent respecter STRICTEMENT le visuel fourni.
+Aucune interprétation graphique libre n’est autorisée.
+Aucun Button JavaFX visible.
+Navigation 100% clavier obligatoire.
+Aucun crash si un asset est manquant.
+
+========================================
+SYSTEME DE COORDONNEES (MENUS)
+========================================
+Résolution de référence :
+Wref = 2048
+Href = 1365
+
+Pour toute fenêtre réelle (W,H) :
+
+s  = min(W / Wref, H / Href)
+ox = (W - Wref * s) / 2
+oy = (H - Href * s) / 2
+
+Toute coordonnée (x,y,w,h) donnée dans ce document est exprimée
+en pixels de référence puis convertie :
+
+X = ox + x * s
+Y = oy + y * s
+Width  = w * s
+Height = h * s
+
+Interdiction de positionnement approximatif.
+
+========================================
+STRUCTURE COMMUNE A TOUS LES MENUS
+========================================
+Root = StackPane
+
+Ordre des couches (bas -> haut) :
+1) BackgroundImageLayer
+2) VignetteLayer
+3) FogLayer
+4) UIContentLayer
+5) InputHintLayer (optionnel)
+
+========================================
+BACKGROUND (MENUS)
+========================================
+Tenter de charger :
+assets/ui/bg_main.png
+assets/ui/bg_classique.png
+assets/ui/bg_multi.png
+assets/ui/bg_survival.png
+assets/ui/bg_bonus.png
+
+Si absent :
+fallback = assets/ui/menu_fade.png
+
+Image affichée en mode cover.
+Aucune déformation des proportions.
+
+========================================
+VIGNETTE + PULSE ROUGE (MENUS)
+========================================
+Vignette noire :
+- Centre alpha 0
+- Bords alpha ~0.55
+
+Pulse rouge :
+- Intervalle aléatoire 450–850 ms
+- Alpha aléatoire 0.05–0.25
+- Effet uniquement sur les bords
+- Jamais plein écran rouge
+
+========================================
+FOG LAYER (MENUS)
+========================================
+- Texture bruit/grain procédurale
+- Opacité 0.08 à 0.18
+- Translation lente ±20 px ref sur 8–14 s
+- Variation légère d’alpha
+
+========================================
+TYPOGRAPHIE (MENUS)
+========================================
+Police horror.ttf :
+UNIQUEMENT pour les titres.
+
+Reste :
+Serif ou Times New Roman.
+
+Couleurs :
+- Titres = rouge/orange sang
+- Texte secondaire = gris clair
+- Plaques = pierre sombre + éclaboussures rouges
+- Sélection = glow rouge discret
+
+========================================
+COMPOSANT PLAQUE (STONE PLATE) (MENUS)
+========================================
+Géométrie :
+- Rectangle
+- Coins arrondis 6–10 px ref
+- Double bordure (extérieur sombre, intérieur clair)
+- Ombre portée blur 18 px ref
+
+Texture :
+- Dégradé sombre
+- Bruit grain
+- Eclaboussures rouges
+- Rayures fines
+
+Etats :
+Idle :
+- normal
+- texte rouge sombre
+
+Hover :
+- texte plus lumineux
+- glow rouge léger
+
+Selected (clavier) :
+- glow visible
+- scale 1.02–1.04
+
+Pressed :
+- scale 0.98
+- glow réduit
+
+Interdiction Button JavaFX.
+
+========================================
+MENU PRINCIPAL – MainMenuView
+========================================
+TITRE :
+Position approx :
+x ≈ 120
+y ≈ 70
+
+Texte EXACT :
+THE
+THE MINOTAUR
+
+Police horror.ttf
+
+LISTE DES ITEMS :
+Zone approx :
+x ≈ 150
+y ≈ 420
+
+Ordre EXACT :
+AVATAR
+CLASSIQUE
+MULTIJOUEUR
+SURVIVALL
+BONUS
+
+Respecter EXACTEMENT :
+SURVIVALL (2 L)
+
+Espacement vertical ≈ 92 px ref.
+
+SELECTION :
+Si sélection clavier :
+1) Flèche à gauche
+2) Barre de surbrillance derrière le texte
+   largeur ≈ 520 px ref
+   hauteur ≈ 55 px ref
+
+Hover souris :
+- underline texte uniquement
+
+La sélection clavier suit automatiquement le hover.
+
+NAVIGATION :
+↑ ↓  -> change sélection (boucle)
+Enter -> valide
+Souris hover -> underline
+Souris clic -> valide
+
+ACTIONS :
+AVATAR       -> goAvatarMenu()
+CLASSIQUE    -> goModeConfig(CLASSIQUE)
+MULTIJOUEUR  -> goModeConfig(MULTIJOUEUR)
+SURVIVALL    -> goModeConfig(SURVIVAL)
+BONUS        -> goBonusConfig()
+
+========================================
+MENU AVATAR – AvatarMenuView
+========================================
+- Afficher 8 avatars (a1.png … a8.png) en grille.
+- Navigation clavier :
+  - ← → et ↑ ↓ déplacent la sélection dans la grille.
+  - La sélection boucle si on dépasse les bords (wrap) pour éviter blocage.
+- Souris :
+  - hover = underline du libellé (si libellé présent) ou highlight discret (sans Button)
+  - clic = sélection courante
+- Avatar sélectionné :
+  - highlight clair (outline + glow discret) et/ou soulignement.
+- Enter :
+  - applique immédiatement la sélection et sauvegarde Preferences avatarIndex (1..8).
+  - affiche un feedback discret (FadeText 1.2s) sans popup.
+- Esc / Backspace :
+  - retour menu principal.
+- Si PNG absent -> fallback :
+  - cercle coloré déterministe par index
+  - + disque noir central.
+
+========================================
+MODE CONFIG – ModeConfigView (CLASSIQUE / MULTIJOUEUR / SURVIVAL)
+========================================
+Ce menu remplace l’ancien “slider difficulté” : la difficulté est contrôlée par une barre de crânes conforme au visuel.
+
+TITRE :
+Position centre, y ≈ 120
+Texte EXACT :
+CLASSIQUE
+MULTIJOUEUR
+SURVIVAL
+Police horror.ttf
+
+BARRE DIFFICULTE (CRANES) :
+- 6 crânes horizontaux.
+- Difficulté = entier 1..5 (jamais de valeur décimale).
+- 1..difficulty lumineux, >difficulty ternes.
+- crâne actif = effet drip rouge.
+
+Navigation difficulté :
+← diminue
+→ augmente
+Bornes strictes 1 à 5.
+
+TEXTE DIFFICULTE :
+Format EXACT :
+Niveau X : <phrase> !
+
+Phrases EXACTES :
+1 : Tu as peur et tu es faible
+2 : tu commences à te sentir chaud ?
+3 : On commence seulement à s’amuser
+4 : tu vas transpirer… le minautor aussi
+5 : tu viens de signer ton arrêt de mort
+
+CHOIX ROLE (plaques centrales) :
+Textes EXACTS :
+JOUEUR
+MINOTOR
+Respecter EXACTEMENT :
+MINOTOR (sans A)
+
+Disposition :
+CLASSIQUE : gauche = JOUEUR, droite = MINOTOR
+MULTIJOUEUR : gauche = JOUEUR, droite = MINOTOR
+SURVIVAL : gauche = MINOTOR, droite = JOUEUR
+
+Navigation rôle :
+← → change rôle
+Enter sélectionne (sans lancer le jeu)
+↑ ↓ change zone (vers actions bas)
+
+ACTIONS BAS (plaques) :
+CLASSIQUE :
+ENTRER DANS LE LABYRINTHE
+RETOUR
+
+MULTIJOUEUR :
+ENTREZ DANS LE LABYRINTHE
+— RETOUR
+
+SURVIVAL :
+ENTREZ DANS LE LABYRINTHE
+— RETOUR
+
+Esc / Backspace = retour menu principal.
+Enter sur “ENTRER/ENTREZ …” = lance GameView.
+
+AppState mis à jour au lancement :
+- mode (CLASSIQUE/MULTIJOUEUR/SURVIVAL)
+- difficulté (1..5)
+- rôle (RUNNER ou MINOTAUR)
+- avatarIndex (depuis Preferences)
+
+========================================
+MENU BONUS – BonusConfigView
+========================================
+TITRE :
+BONUS
+Police horror.ttf
+
+Pas de barre difficulté visuelle.
+Pas de choix rôle.
+
+ACTIONS (plaques) :
+ENTREZ DANS LE LABYRINTHE
+— RETOUR
+
+LOGIQUE BONUS :
+- difficulté = dernière difficulté utilisée durant cette exécution de l’app
+  (stockée en mémoire dans AppState)
+- si aucune difficulté n’a encore été choisie -> difficulté = 3
+- rôle forcé = runner humain
+- Enter sur “ENTREZ…” lance directement GameView en mode BONUS
+- Esc/Backspace ou “— RETOUR” revient au menu principal
+
+========================================
+TRANSITIONS (MENUS)
+========================================
+Entrée menu :
+fade-in 220 ms
+
+Sortie menu :
+fade-out 160 ms
+
+Fog + vignette ne s’arrêtent pas brutalement.
+
+========================================
+CONTRAINTES STRICTES (MENUS)
+========================================
+- Aucun Button visible
+- Aucun Dialog standard dans les menus
+- Navigation 100% clavier
+- La sélection clavier suit le hover souris (pas de double focus)
+- Tous les textes strictement identiques (respecter SURVIVALL et MINOTOR)
+- Aucun crash si image absente
+- Mise à l’échelle proportionnelle obligatoire (s, ox, oy)
+
+========================================
+RESTE DU PROJET (JEU) – RAPPEL
+========================================
+Toutes les autres sections du cahier des charges (Input en jeu, Render, Maze, IA, Modes, HUD, Overlays, Popup in-game, Scene routing, Qualité code/commentaires) restent applicables et inchangées.
+La popup confirmation (ESC) est UNIQUEMENT en jeu (pas dans les menus) et doit être custom (sans Dialog standard).
